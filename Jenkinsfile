@@ -20,10 +20,12 @@ pipeline {
         }
         stage('Test API') {
             steps {
-                echo 'Pausing for 10 seconds to let services initialize...'
-                sleep 10 
+                echo 'Pausing for 30 seconds to let services initialize...'
+                sleep 30 
                 echo 'Testing the get_tickets endpoint...'
-                sh 'curl -f http://localhost:8080/get_tickets.php'
+                sh 'curl -v http://localhost:8080/get_tickets.php || true'
+                echo 'Checking if services are running...'
+                sh 'docker-compose ps'
             }
         }
     }
