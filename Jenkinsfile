@@ -23,7 +23,7 @@ pipeline {
                 echo 'Pausing for 15 seconds to let services initialize...'
                 sleep 15 
                 echo 'Testing the get_tickets endpoint...'
-                sh 'curl -v http://localhost:8080/get_tickets.php'
+                sh 'curl -f http://api/get_tickets.php'
                 echo 'Checking if services are running...'
                 sh 'docker-compose ps'
             }
