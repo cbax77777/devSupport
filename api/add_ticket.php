@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ss", $title, $description);
     
     if ($stmt->execute()) {
-        echo "Ticket added successfully!";
+        echo "Ticket added successfully";
     } else {
         echo "Error: " . $stmt->error;
     }
