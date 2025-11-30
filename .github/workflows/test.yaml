@@ -30,6 +30,9 @@ jobs:
           docker-compose exec -T api curl -f http://localhost/get_tickets.php
           docker-compose ps
 
+      - name: Run unit tests
+        run: docker-compose exec -T api php test/test_unit.php
+
       - name: Tear down
         if: always()
         run: docker-compose down
