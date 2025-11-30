@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the Docker images...'
-                sh 'docker-compose build'
+                sh 'docker-compose build api db'
             }
         }
         stage('Start Services') {
