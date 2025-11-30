@@ -25,7 +25,10 @@ jobs:
       - name: Wait for services
         run: sleep 15
 
-      - name: Test API
+      - name: Run PHPUnit Tests
+        run: docker-compose exec -T api vendor/bin/phpunit --colors=always --testdox
+
+      - name: Test API Endpoint
         run: |
           docker-compose exec -T api curl -f http://localhost/get_tickets.php
           docker-compose ps
