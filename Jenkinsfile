@@ -15,15 +15,17 @@ pipeline {
         stage('Start Services') {
             steps {
                 echo 'Starting the application services...'
-                sh 'docker-compose up -d'
+                sh 'docker-compose up -d api db'
             }
         }
         stage('Test API') {
             steps {
-                echo 'Pausing for 10 seconds to let services initialize...'
-                sleep 10 
+                echo 'Pausing for 15 seconds to let services initialize...'
+                sleep 15 
                 echo 'Testing the get_tickets endpoint...'
-                sh 'curl -f http://localhost:8080/get_tickets.php'
+                sh 'docker-compose exec -T api curl -f http://localhost/get_tickets.php'
+                echo 'Checking if services are running...'
+                sh 'docker-compose ps'
             }
         }
     }
