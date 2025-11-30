@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../api/db.php';
+include '../db.php';
 
 // Prueba conexión
 if ($conn->connect_errno) {
