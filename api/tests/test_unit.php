@@ -1,4 +1,5 @@
 <?php
+# validar conexión a la base de datos y ejecución de una consulta simple
 include '../db.php';
 
 // Prueba conexión
@@ -7,7 +8,6 @@ if ($conn->connect_errno) {
     exit(1);
 }
 
-// Prueba ejecución INSERT con valores dummy
 $stmt = $conn->prepare("INSERT INTO tickets (title, description) VALUES ('test title', 'test desc')");
 if (!$stmt->execute()) {
     echo "FAIL: INSERT failed\n";
