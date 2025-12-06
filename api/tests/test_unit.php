@@ -1,5 +1,5 @@
 <?php
-# validar conexión a la base de datos y ejecución de una consulta simple
+# validar conexión a la base de datos y ejecución de un insert simple
 include '../db.php';
 
 // Prueba conexión
