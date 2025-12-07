@@ -7,7 +7,7 @@
 <body>
     <h1>Ticket Control System</h1>
     
-    <h2>Add New Ticket</h2>
+    <h2>add New Ticket</h2>
     <form id="ticketForm">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required><br><br>
